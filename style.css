@@ -1,0 +1,158 @@
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: rgb(12, 3, 19);
+}
+
+header, main, aside, footer{
+     padding: 3px;
+     margin: 1px;
+    background: rgb(206,206,209);
+    background: linear-gradient(90deg, rgba(206,206,209,1) 0%, rgba(245,245,249,1) 35%);
+}
+
+a{
+    font-family: 'Open Sans', sans-serif;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.flexitem{
+    display: flex;
+    flex-direction: row;
+}
+
+.column1{
+    width: 50%;
+}
+
+.column2{
+    width: 50%;
+
+} 
+
+.container{
+    overflow-x: hidden;
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 225px 1fr 75px;
+    grid-template-areas: "header header"
+                        "main sidebar"
+                        "footer footer";
+}
+
+nav{
+    margin-top: -4px;
+    position: absolute;
+}
+
+header{
+    grid-area: header;
+}
+
+header ul{
+    margin: 5px;
+    display: inline;
+    max-width: 100%;
+}
+header ul a {
+    text-decoration: none;
+    margin: 8px;
+    color: black;
+    font-size: large;
+}
+
+header ul li {
+    display: inline-block;
+}
+
+.logo{
+    height:40px;
+    width: 130px;
+    opacity: 0.7;
+}
+
+ .door{
+    height: 225px;
+    width: 900px; 
+   float: right;
+   margin-left: 800px;
+   margin-bottom: -10px;
+} 
+
+img {
+    max-width: 100%;
+}
+
+main{
+    grid-area: main;
+}
+
+aside{
+    grid-area: sidebar;
+    list-style: none;
+}
+aside li {
+    list-style: none;
+    margin: 30px;
+}
+
+footer{
+    grid-area: footer;
+}
+
+@media only screen  and ( max-width: 500px) {
+    .container{
+         grid-template-columns: 1fr;
+         grid-template-rows: 130px 1fr 1fr 95px;
+         grid-template-areas: "header"
+                              "main"
+                              "sidebar"
+                              "footer";
+    }
+   .logo{
+       width: 50px;
+       height: 20px;
+   }
+
+    nav ul a{
+        height: auto;
+        width: 100%;
+        font-size: x-small;
+        margin-right: 2px;
+
+    }
+
+    .door{
+        width: 400px;
+        height: auto;
+        margin: 50px 0px 0px 100px;
+        
+    } 
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .container{
+         grid-template-columns: 1fr;
+         grid-template-rows: 220px 1fr 1fr 75px;
+         grid-template-areas: "header"
+                              "main"
+                              "sidebar"
+                              "footer";
+    }
+
+     .door{
+       
+        width: 100%;
+        height: auto;
+        margin: 55px 0px 30px 170px;
+    }
+}
